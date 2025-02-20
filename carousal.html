@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Multi-Image Carousel</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #eaeaea;
+        margin: 0;
+      }
+
+      .carousel {
+        width: 90%;
+        max-width: 900px;
+        overflow: hidden;
+        position: relative;
+        border: 3px solid #bbb;
+        border-radius: 10px;
+      }
+
+      .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel img {
+        width: 100%;
+        max-width: 180px; /* Default image size */
+        height: auto;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      .btn:disabled {
+        background: rgba(0, 0, 0, 0.2);
+        cursor: not-allowed;
+      }
+
+      /* RESPONSIVE DESIGN */
+      @media (max-width: 1024px) {
+        .carousel img {
+          max-width: 150px;
+        }
+      }
+      @media (max-width: 768px) {
+        .carousel img {
+          max-width: 120px;
+        }
+      }
+      @media (max-width: 480px) {
+        .carousel img {
+          max-width: 90px;
+        }
+        .btn {
+          padding: 10px;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <button class="btn prev" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="carousel-images">
+        <img src="/albums/Fearless.jpeg" alt="Image 1" />
+        <img src="/albums/Lover.jpeg" alt="Image 2" />
+        <img src="/albums/OurSong.png" alt="Image 3" />
+        <img src="/albums/Reputation.jpeg" alt="Image 4" />
+        <img src="/albums/Red.jpeg" alt="Image 5" />
+        <img src="/albums/Fearless.jpeg" alt="Image 6" />
+        <img src="/albums/Lover.jpeg" alt="Image 7" />
+      </div>
+      <button class="btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+      let index = 0;
+      const slides = document.querySelector(".carousel-images");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      function updateCarousel() {
+        const images = document.querySelectorAll(".carousel img");
+        const imgWidth = images[0].clientWidth;
+        const carouselWidth = document.querySelector(".carousel").clientWidth;
+        const visibleImages = Math.floor(carouselWidth / imgWidth);
+        const totalImages = images.length;
+        const maxIndex = totalImages - visibleImages;
+
+        index = Math.min(index, maxIndex);
+        slides.style.transform = `translateX(${-index * imgWidth}px)`;
+
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index >= maxIndex;
+      }
+
+      function moveSlide(direction) {
+        index += direction;
+        updateCarousel();
+      }
+
+      window.addEventListener("resize", updateCarousel);
+      document.addEventListener("DOMContentLoaded", updateCarousel);
+    </script>
+  </body>
+</html>

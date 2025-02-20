@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taylor Swift</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="carousel.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bentham&family=Cinzel+Decorative:wght@400;700;900&family=Italiana&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-nav-bar">
+        <ul>
+          <li><a href="#hero">HOME</a></li>
+          <li><a href="#merch">MERCH</a></li>
+          <li><a href="#listen">LISTEN</a></li>
+          <li><a href="#tour">TOUR</a></li>
+          <li><a href="#subscribe">SUBSCRIBE</a></li>
+        </ul>
+      </div>
+      <h1>TAYLOR SWIFT</h1>
+    </div>
+    <div id="merch" class="merch">
+      <h1 class="headings">MERCHS</h1>
+      <div class="merch-img">
+        <img src="lover_record-removebg-preview.png" />
+        <img src="midnight_record-removebg-preview.png" />
+        <img src="reputation_record-removebg-preview.png" />
+      </div>
+      <div class="merch-tshirt">
+        <img src="eras_tour_merch.png" alt="" />
+        <img src="eras_tour_2_merch.png" alt="" />
+      </div>
+      <button class="butn">VISIT STORE</button>
+    </div>
+
+    <div id="listen" class="listen">
+      <h1 class="headings">LISTEN</h1>
+      <div class="listen-box">
+        <div class="carousel">
+          <button class="btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <div class="carousel-images">
+            <img src="/albums/Fearless.jpeg" alt="Image 1" />
+            <img src="/albums/Lover.jpeg" alt="Image 2" />
+            <img src="/albums/OurSong.png" alt="Image 3" />
+            <img src="/albums/Reputation.jpeg" alt="Image 4" />
+            <img src="/albums/Red.jpeg" alt="Image 5" />
+            <img src="/albums/1989.png" alt="Image 6" />
+            <img src="/albums/speak_now.jpeg" alt="Image 7" />
+          </div>
+          <button class="btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </div>
+    </div>
+    <div id="tour" class="tour">
+      <h1 class="headings">TOUR</h1>
+      <div class="box">
+        <h2>
+          MAY <br />
+          9
+        </h2>
+        <h3>HARD ROCK HOTEL & CASINO</h3>
+        <h3>ATLANTIC CITY, NJ</h3>
+        <button class="butn">BUY TICKETS</button>
+      </div>
+      <div class="box">
+        <h2>
+          MAY <br />
+          15
+        </h2>
+        <h3>
+          Studio Sessions The Las Vegas Residency At The Colosseum at Caesars
+          Palace
+        </h3>
+        <h3>Las Vegas, NV</h3>
+        <button class="butn">BUY TICKETS</button>
+      </div>
+      <div class="box">
+        <h2>
+          MAY <br />
+          24
+        </h2>
+        <h3>GRAND ARENA</h3>
+        <h3>LOS ANGELES, CA</h3>
+        <button class="butn">BUY TICKETS</button>
+      </div>
+    </div>
+    <div id="subscribe" class="subscribe">
+      <h1 class="headings">SUBSCRIBE</h1>
+      <p>Subscribe the newslatter to know the latest on Taylor Swift</p>
+      <div class="subscribe-box">
+        <input type="email" />
+        <button class="butn">Sign Up</button>
+      </div>
+      <a href=""
+        >On clicking the Sign Up button your agreeing to the following terms &
+        conditions</a
+      >
+    </div>
+    <div class="taylor-swift">
+      <h1 class="headings">TAYLOR SWIFT</h1>
+      <div class="socials">
+        <img src="/svg/instagram-svgrepo-com.svg" alt="" />
+        <img src="/svg/youtube-svgrepo-com.svg" alt="" />
+        <img src="/svg/spotify-162-svgrepo-com.svg" alt="" />
+        <img src="/svg/apple-music-svgrepo-com.svg" alt="" />
+        <img src="/svg/snapchat-136-svgrepo-com.svg" alt="" />
+        <img src="/svg/tiktok-svgrepo-com.svg" alt="" />
+      </div>
+    </div>
+    <script src="carousel.js"></script>
+  </body>
+</html>
